@@ -1,5 +1,6 @@
 # Tasty
-"In store Food Ordering Android app",Scans QR code and presents Menu layouts from an API containing data in JSON format, and displays it with heterogeneous recyclerview. Added Beautiful UI
+Scan to Order
+"In-store Food Ordering Android app",Scans QR code and presents Menu layouts Using Retrofit API from the data stored in JSON format, Blended together with RecyclerView with Custom Animation. Added Beautiful UI
 
 ## Scan
 this QR code and a Menu will be presented, according to Qr code, The menus can be changed according to the embedded Text inside QR code.
@@ -15,6 +16,9 @@ click on Cart and then click order, Android Share message window will Open with 
 
 ## To-do List
 ### +++++++++++++++
+- [X]  NIGHT MODE!!!!(BETA)
+- [X]  Navigation Drawer (BETA)
+- [X]  Bottom NavigationBar with animation
 - [X]  Splash Screen
 - [X]  Scan Activity
 - [X]  CenterZoom Animation 
@@ -26,3 +30,4 @@ click on Cart and then click order, Android Share message window will Open with 
 - [ ]  Order Editable Activity
 - [ ]  Refactoring Cart activity 
 - [ ]  Data Processing On server For real time Application Use
+- [ ] Online Payment Module
