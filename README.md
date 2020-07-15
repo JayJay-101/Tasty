@@ -3,6 +3,8 @@
 
 ## Scan
 this QR code and a Menu will be presented, according to Qr code, The menus can be changed according to the embedded Text inside QR code.
+
+
 ![alt text](https://raw.githubusercontent.com/cat-lee/Tasty/master/photos/table%201.png)
 
 (qr code panel for table 1)
