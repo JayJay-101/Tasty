@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="controls_margin">16dp</dimen>
+    <dimen name="controls_margin_large">104dp</dimen>
+    <dimen name="button_size">156dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">220dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="toolbar_icon">25dp</dimen>
+    <dimen name="toolbar_marginTop">12dp</dimen>
+    <dimen name="cardview_magin">2dp</dimen>
+    <dimen name="padding_top_store">5dp</dimen>
+    <dimen name="item_catalog_padding_top">5dp</dimen>
+    <dimen name="image_food_height">80dp</dimen>
+    <dimen name="padding_left_mark">10dp</dimen>
+    <dimen name="text_size">15dp</dimen>
+    <dimen name="text_size_address">10dp</dimen>
+    <dimen name="cardview_elvation">5dp</dimen>
+    <dimen name="cardview_height">130dp</dimen>
+    <dimen name="text_food_name">18sp</dimen>
+</resources>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/dardde"
+    tools:context=".Details">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/transparent"
+        android:elevation="4dp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="312dp"
+        app:cardCornerRadius="16dp"
+        android:elevation="10dp"
+        android:id="@+id/food_placeholder"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/food_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_launcher_background" />
+    </androidx.cardview.widget.CardView>
+
+
+
+
+                <ImageButton
+                    android:id="@+id/regular_food_plus_details"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    app:layout_constraintTop_toBottomOf="@+id/food_placeholder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/plus"
+                    android:onClick="onClicky"
+                    android:layout_alignParentRight="true" />
+
+
+
+
+                <TextView
+                    android:id="@+id/titlee"
+                    android:paddingTop="13dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dish: "
+                    app:layout_constraintTop_toBottomOf="@+id/food_placeholder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/food_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="13dp"
+                    android:text="FoodTitle"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/titlee"
+                    app:layout_constraintTop_toBottomOf="@id/food_placeholder"
+                    android:fontFamily="cursive"
+                    android:textColor="@android:color/white"  />
+
+
+
+
+
+                <TextView
+                    android:id="@+id/price_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price: "
+                    android:paddingTop="13dp"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    app:layout_constraintTop_toBottomOf="@+id/titlee"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/food_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FoodPrice"
+                    android:paddingTop="13dp"
+                    app:layout_constraintStart_toEndOf="@+id/price_lay"
+                    app:layout_constraintTop_toBottomOf="@+id/food_title"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    android:textColor="@android:color/white" />
+
+
+                <TextView
+                    android:id="@+id/caloorie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories: "
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:paddingTop="13dp"
+                    app:layout_constraintTop_toBottomOf="@+id/price_lay"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/food_calories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FoodCalories"
+                    android:paddingTop="13dp"
+                    app:layout_constraintStart_toEndOf="@+id/caloorie"
+                    app:layout_constraintTop_toBottomOf="@id/food_price"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    android:textColor="@android:color/white" />
+
+
+
+                <TextView
+                    android:id="@+id/descrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description: "
+                    android:paddingTop="13dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@+id/caloorie"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/food_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="13dp"
+                    android:text="FoodDescription"
+                    app:layout_constraintStart_toEndOf="@+id/descrip"
+                    app:layout_constraintTop_toBottomOf="@+id/food_calories"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    android:layout_marginRight="10dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/fatt"
+                    android:paddingTop="13dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fat:     "
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@+id/food_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:fontFamily="cursive"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"  />
+
+                <TextView
+                    android:id="@+id/food_fat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FoodFat"
+                    android:paddingTop="13dp"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@+id/food_description"
+                    app:layout_constraintStart_toEndOf="@+id/fatt"
+                    android:fontFamily="cursive"
+                    android:textColor="@android:color/white" />
+
+
+
+                <TextView
+                    android:id="@+id/nacl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sodium: "
+                    android:paddingTop="13dp"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    app:layout_constraintTop_toBottomOf="@+id/fatt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/food_sodium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:paddingTop="13dp"
+                    android:fontFamily="cursive"
+                    app:layout_constraintTop_toBottomOf="@+id/food_fat"
+                    app:layout_constraintStart_toEndOf="@+id/nacl"
+                    android:text="0"
+                    android:textColor="@android:color/white"/>
+
+
+
+                <TextView
+                    android:id="@+id/protein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein: "
+                    android:paddingTop="13dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nacl"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"  />
+
+                <TextView
+                    android:id="@+id/food_protein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein"
+                    android:paddingTop="13dp"
+                    app:layout_constraintTop_toBottomOf="@id/food_sodium"
+                    app:layout_constraintStart_toEndOf="@+id/protein"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/ratin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rating: "
+                    android:paddingTop="13dp"
+                    app:layout_constraintTop_toBottomOf="@id/food_protein"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"  />
+
+                <RatingBar
+                    android:id="@+id/food_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:background="#3A8B1616"
+                    app:layout_constraintStart_toEndOf="@+id/ratin"
+                    app:layout_constraintTop_toBottomOf="@id/food_protein"
+                    android:textSize="18sp"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:fontFamily="cursive"
+                    android:textColor="@android:color/white" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

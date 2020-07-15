@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black_overlay"
+        android:elevation="4dp" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:lottie_fileName="order_background.json"
+                app:lottie_autoPlay="true"
+                android:scaleType="fitEnd"
+                app:lottie_loop="true"
+                android:background="@drawable/treaade"
+                app:lottie_repeatMode="reverse"
+                app:lottie_speed="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Order Here"
+                android:layout_above="@+id/email_button"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/bookf"
+                android:textSize="39sp"/>
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="460dp"
+                    android:onClick="didTapgPlayButton"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/email_button"
+                    app:lottie_loop="true"
+                    android:scaleType="fitCenter"
+                    app:lottie_fileName="orderr.json"
+                    app:lottie_autoPlay="true"
+                    />
+                <TextView
+                    android:outlineAmbientShadowColor="@color/black_overlay"
+                    android:outlineProvider="background"
+                    android:background="@color/black_overlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/email_button"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Total Price: "
+                    android:fontFamily="@font/boldf"
+
+                    android:id="@+id/asd"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="36sp"/>
+
+    <TextView
+        android:id="@+id/order_price_total"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/asd"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:background="@color/black_overlay"
+
+        android:fontFamily="@font/mediumf"
+        android:text="0.0"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+
+
+
+</RelativeLayout>

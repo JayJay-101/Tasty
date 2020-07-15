@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:title="Breakfast"
+        />
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:title="Lunch"/>
+    <item
+        android:id="@+id/action_customer"
+        android:enabled="true"
+        android:title="Food Cart"
+        />
+</menu>

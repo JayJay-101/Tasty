@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="fill_parent"
+    android:layout_marginBottom="-20dp"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+<!-- night mode constraint on click-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/night"
+                android:layout_height="match_parent">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/sasasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/toolbar"
+                    app:layout_goneMarginTop="30dp"
+                    app:lottie_fileName="nonet.json"
+                    app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/texttView"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/bookf"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:gravity="start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintBottom_toTopOf="@+id/reee"
+                android:paddingTop="-80dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_height="73dp"
+                android:id="@+id/reee"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineProvider="none"
+                app:layout_constraintTop_toBottomOf="@+id/texttView">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/horizontal_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/teck"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/bookf"
+                android:layout_height="wrap_content"
+                android:text="Menu"
+                android:textColor="@android:color/black"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reee" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineProvider="none"
+                app:layout_constraintBottom_toBottomOf="@+id/asas"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@+id/teck"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        tools:listitem="@tools:sample/last_names"
+                        android:layout_height="match_parent"
+                        android:id="@+id/vertical_recycler"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+                <com.hfad.tasty.CurvedBottomNavigationView
+                    android:id="@+id/asas"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_gravity="bottom"
+                    android:textDirection="anyRtl"
+                    app:itemTextColor="#000">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/rightL"
+                        android:layout_width="66dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="125dp"
+                        app:lottie_fileName="shopping.json"
+                        app:lottie_loop="false" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lunch"
+                        android:layout_width="87dp"
+                        android:layout_height="73dp"
+                        android:layout_gravity="center"
+                        android:paddingBottom="20dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="Lunch.json"
+                        app:lottie_loop="true" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/leftL"
+                        android:layout_width="72dp"
+                        android:layout_height="66dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="125dp"
+                        android:paddingBottom="20dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="frisS.json"
+                        app:lottie_loop="false" />
+
+                </com.hfad.tasty.CurvedBottomNavigationView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
