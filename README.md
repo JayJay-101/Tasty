@@ -8,11 +8,14 @@ this QR code and a Menu will be presented, according to Qr code, The menus can b
 <img src="https://raw.githubusercontent.com/cat-lee/Tasty/master/photos/table%201.png" alt="table 1" width="450" height="450">
 (qr code panel for table 1)
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/WboYBKyb4ig/0.jpg)](https://www.youtube.com/watch?v=WboYBKyb4ig)
+
 ## Menu Screen 
 menu will be presented onlyif Internet if On else  nonet animation  will be presented
 
 ## Cart screen
 click on Cart and then click order, Android Share message window will Open with User's Order Data
+
 
 ## To-do List
 ### +++++++++++++++
