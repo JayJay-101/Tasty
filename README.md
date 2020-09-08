@@ -5,8 +5,7 @@ Scan to Order
 ## Scan
 this QR code and a Menu will be presented, according to Qr code, The menus can be changed according to the embedded Text inside QR code.
 
-<img src="https://raw.githubusercontent.com/cat-lee/Tasty/master/photos/table%201.png" alt="table 1" width="450" height="450">
-(qr code panel for table 1)
+## CLICK ON IMAGE BELOW
 
 [![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/cat-lee/Tasty/master/photos/table%201.png)](https://www.youtube.com/watch?v=WboYBKyb4ig)
 
