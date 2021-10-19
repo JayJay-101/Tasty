@@ -36,9 +36,14 @@ public class Scann extends AppCompatActivity {
         IntentResult result=IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
         if (result!=null && result.getContents()!=null)
         {
+            if (result.startsWith("iScanner@")) {
+            result = result.substring(8);
+            String[] ids = result.split("#");
+             resid = ids[1];
+             tableid = ids[2];
             Intent intent=new Intent(getApplicationContext(),MainActivity.class);
             intent.putExtra("d",result.getContents());
-            MainActivity.this.startActivity(intent);
+            Scann.this.startActivity(intent);
         }
 
         super.onActivityResult(requestCode, resultCode, data);
