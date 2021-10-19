@@ -43,7 +43,7 @@ public class Scann extends AppCompatActivity {
              tableid = ids[2];
             Intent intent=new Intent(getApplicationContext(),MainActivity.class);
             intent.putExtra("d",result.getContents());
-            Scann.this.startActivity(intent);
+            Scann.this.startActivity(intent);}
         }
 
         super.onActivityResult(requestCode, resultCode, data);
