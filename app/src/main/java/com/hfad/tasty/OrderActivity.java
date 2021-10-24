@@ -21,8 +21,8 @@ import java.util.List;
 import static com.hfad.tasty.CartActivity.grandTotal;
 import static com.hfad.tasty.CartActivity.nameData;
 import static com.hfad.tasty.MainActivity.uniquecart;
-import static com.hfad.tasty.Scann.resid;
-import static com.hfad.tasty.Scann.tableid;
+import static com.hfad.tasty.Mainn.resid;
+import static com.hfad.tasty.Mainn.tableid;
 
 public class OrderActivity extends AppCompatActivity {
     public String ll;

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
     public static TextView tv;//cart number
     public static List<GeneralFood> uniquecart = new ArrayList<>(); //unique carrt array of object
     public static VerticalAdapter mAdapter; //adapter to rotate the views with setthingy
-    ArrayList<String> categories = new ArrayList<String>(); // horizontal categories buttons
+    ArrayList<String> categories = new ArrayList<String>(); // horizontal categories buttons on top
     List<GeneralFood> popularFoods;
     public Toolbar toolbar;
     public static LottieAnimationView view; //cartview lottie of TOOLBAR
@@ -255,10 +255,14 @@ public class MainActivity extends AppCompatActivity
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, CartActivity.class);
-               view.playAnimation();
-                startActivity(myIntent);
-
+                if(uniquecart.size()==0){
+                    Toast.makeText(MainActivity.this,"make order",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent myIntent = new Intent(MainActivity.this, CartActivity.class);
+                    view.playAnimation();
+                    startActivity(myIntent);
+                }
 
             }});
 
@@ -283,12 +287,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_scan) {
-            // Handle the camera action
-            super.onBackPressed();
-        } else if (id == R.id.nav_cart) {
-            Intent myIntent = new Intent(MainActivity.this, CartActivity.class);
+            Intent myIntent = new Intent(MainActivity.this, Mainn.class);
             MainActivity.this.startActivity(myIntent);
-
+        } else if (id == R.id.nav_cart) {
+            if(uniquecart.size()==0) {
+                Toast.makeText(this, "Add Food First", Toast.LENGTH_LONG).show();
+            }else {
+                Intent myIntent = new Intent(MainActivity.this, CartActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
         } else if (id == R.id.nav_orders) {
             if(uniquecart.size()==0) {
                 Toast.makeText(this, "Make Order First", Toast.LENGTH_LONG).show();
@@ -312,6 +319,10 @@ public class MainActivity extends AppCompatActivity
                 con1.setBackgroundColor(Color.BLACK);
                 mAdapter.notifyDataSetChanged();
                 toolbar.setTitleTextColor(Color.WHITE);
+                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+                navigationView.getMenu().findItem(id).setTitle("Light mode");
+
+
 
             }
             if(ad&&nf){
@@ -320,6 +331,9 @@ public class MainActivity extends AppCompatActivity
                 con1.setBackgroundColor(Color.WHITE);
                 mAdapter.notifyDataSetChanged();
                 toolbar.setTitleTextColor(Color.BLACK);
+                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+                navigationView.getMenu().findItem(id).setTitle("Night mode");
+
 
             }
             ad=!ad;

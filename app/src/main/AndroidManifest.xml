@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.hfad.tasty">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".re"
+            android:exported="true" />
         <activity android:name=".Splashsa">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +27,13 @@
         <activity android:name=".CartActivity" />
         <activity android:name=".OrderActivity" />
         <activity android:name=".Details" />
-        <activity android:name=".Scann" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Mainn" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            tools:replace="android:screenOrientation" />
     </application>
 
 </manifest>

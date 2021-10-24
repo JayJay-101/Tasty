@@ -1,5 +1,6 @@
 package com.hfad.tasty;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +12,13 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class Mainn extends AppCompatActivity {
+    public static String tableid,resid;
 
     MediaPlayer mPlayer;
     public int s=0;
@@ -78,10 +84,38 @@ public class Mainn extends AppCompatActivity {
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
-                    Intent myIntent = new Intent(Mainn.this, Scann.class);
-                    Mainn.this.startActivity(myIntent);
+                    IntentIntegrator intentIntegrator=new IntentIntegrator(Mainn.this);
+                    intentIntegrator.setCaptureActivity(re.class);
+                    intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
+                    intentIntegrator.setCameraId(0);
+                    intentIntegrator.setOrientationLocked(true);
+                    intentIntegrator.setPrompt("Scanning");
+                    intentIntegrator.setBeepEnabled(false);
+                    intentIntegrator.setBarcodeImageEnabled(true);
+                    intentIntegrator.initiateScan();
                 }
             }, 700);
+        }
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        IntentResult result= IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
+        if (result!=null && result.getContents()!=null)
+        { if (result.getContents().startsWith("'iScanner@")) {
+
+
+            String d = result.toString().substring(8);
+            String[] ids = d.split("#");
+            resid = ids[1];
+            tableid = ids[2];
+            Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            this.startActivity(intent);
+        }
+        }else{
+            super.onActivityResult(requestCode, resultCode, data);
         }
 
     }
